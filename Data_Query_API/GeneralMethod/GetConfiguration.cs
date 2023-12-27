@@ -15,6 +15,10 @@ namespace Data_Query_API.GeneralMethod
         /// <summary>
         /// 测试数据数据库
         /// </summary>
+        public static string DyTestPerformencySql = GetDefinition("ConnectionStrings:DyTestPerformencySql");
+        /// <summary>
+        /// 测试数据数据库
+        /// </summary>
         public static string testLogMysql = GetDefinition("ConnectionStrings:testLogMysql");
 
         /// <summary>

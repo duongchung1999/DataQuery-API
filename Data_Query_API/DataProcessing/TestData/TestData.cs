@@ -6,6 +6,8 @@ using Data_Query_API.DataProcessing.BackgroundData;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Reflection;
+using MySqlX.XDevAPI.Common;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Data_Query_API.DataProcessing.DataQuery
 {
@@ -244,6 +246,32 @@ namespace Data_Query_API.DataProcessing.DataQuery
                 Log.LogWrite($"保存页面模糊查询测试数据(SaveFuzzyQueryTestData)异常,异常信息{ex.Message}", "TestDataLog");
                 return null;
             }
+        }
+        #endregion
+
+        #region DyTest Performency Data
+        /// <summary>
+        /// Get All Model's Performency
+        /// </summary>
+        /// <returns></returns>
+        public static async Task<ApiResponse> GetPerformencyData(string model)
+        {
+            return await Task.Run(async () =>
+            {
+                try
+                {
+                    string QuerySql = $"Select computer,type_mode,test_times,pass_times,performency from Network where status1 = 'connected'";
+                    QuerySql += model.Equals("null") ? "" : $" AND model = '{model}'";
+                   // QuerySql += " ORDER BY Time DESC";
+                    Mysql context = new(GetConfiguration.DyTestPerformencySql);
+                    return await context.DataQuery(QuerySql, 100000);
+                }
+                catch (Exception ex)
+                {
+                    Log.LogWrite($"获取指定条件测试数据(GetTestData)异常,异常信息{ex.Message}", "TestDataLog");
+                    return ApiResponse.Error(500, ex.Message.ToString());
+                }
+            });
         }
         #endregion
     }
