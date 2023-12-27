@@ -1,0 +1,1782 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Data_Query_API</name>
+    </assembly>
+    <members>
+        <member name="T:Data_Query_API.Controllers.BackgroundDataController">
+            <summary>
+            后台数据获取接口
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.Controllers.BackgroundDataController.GetUploadDataModelStation">
+            <summary>
+            获取后台所有有上传测试数据的机型和站别
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.BackgroundDataController.GetUploadLGDataModelStation">
+            <summary>
+            获取后台所有有上传LG测试数据的机型和站别
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.BackgroundDataController.GetUserModel(System.String)">
+            <summary>
+            根据用户ID获取用户所有机型
+            </summary>
+            <param name="UserID">传入用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.BackgroundDataController.GetUploadAEDataUserModel(System.String)">
+            <summary>
+            根据用户ID获取用户所有有上传声学数据的机型
+            </summary>
+            <param name="UserID">传入用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.BackgroundDataController.GetStation(System.String)">
+            <summary>
+            根据机型名称获取后台有上传测试数据的站别
+            </summary>
+            <param name="ModelName">传入机型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.BackgroundDataController.GetLGStation(System.String)">
+            <summary>
+            根据机型名称获取后台有上传Logi测试数据的站别
+            </summary>
+            <param name="ModelName">传入机型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.BackgroundDataController.GetStationTestItem(System.String,System.String)">
+            <summary>
+            根据机型和站别名称获取后台站别测试项目
+            </summary>
+            <param name="ModelName">传入机型名称</param>
+            <param name="StationName">传入站别名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.BackgroundDataController.GetStationConfig(System.String,System.String)">
+            <summary>
+            根据机型和站别名称获取后台站别Config
+            </summary>
+            <param name="ModelName">传入机型名称</param>
+            <param name="StationName">传入站别名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.BackgroundDataController.GetItemNumberInfo(System.String)">
+            <summary>
+            根据料号获取对应信息
+            </summary>
+            <param name="ItemNumber">传入料号</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.Controllers.DataDailyController">
+            <summary>
+            生成日报数据接口
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.Controllers.DataDailyController.GenerateDailyReportData(System.String)">
+            <summary>
+            根据传入日期生成日报表文件
+            </summary>
+            <param name="DateTimeValue">传入生成报表的日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.DataDailyController.GenerateLGDailyData(System.String)">
+            <summary>
+            根据传入日期生成日LG测试数据和AE数据
+            </summary>
+            <param name="DateTimeValue">传入生成的日期</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.Controllers.DataDailyQueryController">
+            <summary>
+            数据日报查询接口
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.Controllers.DataDailyQueryController.GetDailyTableName">
+            <summary>
+            获取日报表数据数据库所有表名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.DataDailyQueryController.GetModelFromYear(System.String)">
+            <summary>
+            根据年获取当年所有有数据的机型
+            </summary>
+            <param name="Year">传入年份</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.DataDailyQueryController.GetDailyData(System.String,System.String,System.String,System.String)">
+            <summary>
+             查询指定机型指定时间段每日生产数据统计
+            </summary>
+            <param name="Year">传入年份</param>
+            <param name="Model">传入机型名称</param>
+            <param name="StartTime">传入查询开始时间</param>
+            <param name="EndTime">传入查询结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.DataDailyQueryController.GetDailyReportData(System.String,System.String,System.String,System.String)">
+            <summary>
+             查询指定机型指定时间段单日生产数据统计
+            </summary>
+            <param name="Year">传入年份</param>
+            <param name="Model">传入机型名称</param>
+            <param name="StartTime">传入查询开始时间</param>
+            <param name="EndTime">传入查询结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.DataDailyQueryController.SaveDailyReport(System.String,System.String,System.String)">
+            <summary>
+             查询指定机型指定时间段单日生产数据统计
+            </summary>
+            <param name="ModelName">传入机型数据</param>
+            <param name="DailyReportData">传入日报数据</param>
+            <param name="SaveType">存储数据类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.Controllers.LGAETestDataController">
+            <summary>
+            Logi 声学数据查询和存储接口
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.Controllers.LGAETestDataController.GetLGAEDataModel">
+            <summary>
+            获取上传LG声学数据的所有机型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.LGAETestDataController.GetLGAEDataStationFromModel(System.String)">
+            <summary>
+            根据机型获取上传LG声学数据的站别
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.LGAETestDataController.GetLGAEDataName(System.String,System.String,System.String,System.String)">
+            <summary>
+            根据站别和时间获取上传的LG声学数据文件名称
+            </summary>
+            <param name="Model">传入机型名称</param>
+            <param name="LGStation">传入LG站别名称</param>
+            <param name="StartTime">传入查询开始时间</param>
+            <param name="EndTime">传入查询结束时间</param>
+        </member>
+        <member name="M:Data_Query_API.Controllers.LGAETestDataController.DownloadSingleAcousticData(System.String)">
+            <summary>
+            根据页面选择下载单个声学数据文件
+            </summary>
+            <param name="FilePath">传入文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.LGAETestDataController.DownloadSelectedAcousticData(System.String,System.String)">
+            <summary>
+            下载页面选择的声学数据
+            </summary>
+            <param name="FileName">传入存储后的文件夹名称</param>
+            <param name="FileInfo">以(JSON.stringify)入选择的文件信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.LGAETestDataController.DownloadAcousticData(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            下载页面指定条件下的所有声学数据
+            </summary>
+            <param name="Model">传入机型名称</param>
+            <param name="LGStation">传入LG站别名称</param>
+            <param name="StartTime">传入查询开始时间</param>
+            <param name="EndTime">传入查询结束时间</param>
+            <param name="FileName">传入存储后的文件夹名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.LGAETestDataController.DownloadAndUploadFiles(System.String)">
+            <summary>
+            根据数据生成上传源文件
+            </summary>
+            <param name="StationConfig">传入站别Config信息</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.Controllers.LGTestDataController">
+            <summary>
+            Logi 测试数据查询接口
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.Controllers.LGTestDataController.GetLGDataTableName">
+            <summary>
+            获取LG测试数据数据库所有表名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.LGTestDataController.GetDataTableLGStation(System.String)">
+            <summary>
+            根据表名获取LG测试数据表中所有站别
+            </summary>
+            <param name="TableName">传入数据表表名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.LGTestDataController.GetLGComputerName(System.String,System.String)">
+            <summary>
+            根据表名获取LG测试数据表中指定站别所有测试电脑名称
+            </summary>
+            <param name="TableName">传入表名</param>
+            <param name="Station">传入站别名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.LGTestDataController.GetLGTestData(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            获取指定条件LG测试数据
+            </summary>
+            <param name="TableName">传入表名</param>
+            <param name="Station">站别名称</param>
+            <param name="MachineName">电脑编号</param>
+            <param name="MesStatus">MES 转态</param>
+            <param name="StartTime">查询开始时间</param>
+            <param name="EndTime">查询结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.LGTestDataController.GetJsonFileData(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            根据指定条件获取生成 Json File 文件原始数据 
+            </summary>
+            <param name="TableName">传入表名</param>
+            <param name="Station">站别名称</param>
+            <param name="MachineName">电脑编号</param>
+            <param name="MesStatus">MES 转态</param>
+            <param name="StartTime">查询开始时间</param>
+            <param name="EndTime">查询结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.LGTestDataController.SaveLGTestData(Data_Query_API.Model.SaveLGDataValue)">
+            <summary>
+            保存页面Logi测试数据
+            </summary>
+            <param name="saveLGDataValue">传入保存的LG数据</param>
+            <returns></returns>
+            //dynamic DataQuery
+        </member>
+        <member name="T:Data_Query_API.Controllers.RealTimeDataController">
+            <summary>
+            实时数据接口
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.Controllers.RealTimeDataController.ClearStatistics">
+            <summary>
+            清空所有实时统计信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.Controllers.SNDataQueryController">
+            <summary>
+            SN 查询测试数据接口
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.Controllers.SNDataQueryController.GetTestDataFromSN(System.String,System.String,System.String)">
+            <summary>
+            获取指定SN测试数据
+            </summary>
+            <param name="TableName">传入表名</param>
+            <param name="YearFalgValue">是否查整年</param>
+            <param name="SN">SN 号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.SNDataQueryController.SaveFuzzyQueryTestData(System.String,System.String)">
+            <summary>
+            保存SN查询所有测试数据
+            </summary>
+            <param name="Model">传入机型名称</param>
+            <param name="SNTestData">传入保存的测试数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.SNDataQueryController.GetTestItemDataFromSN(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            获取指定站别、SN和测试项的测试值
+            </summary>
+            <param name="ModelName">传入机型名称</param>
+            <param name="StationName">传入站别名称</param>
+            <param name="SN">传入产品SN</param>
+            <param name="TestItemName">传入测试项目名称</param>
+            <param name="QuarterValue">传入查询几个季度</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.Controllers.TestDataQueryController">
+            <summary>
+            测试数据查询接口
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataQueryController.GetDataTableName">
+            <summary>
+            获取测试数据数据库所有表名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataQueryController.GetDataTableStation(System.String)">
+            <summary>
+            根据表名获取表中所有站别
+            </summary>
+            <param name="TableName">传入数据表表名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataQueryController.GetComputerName(System.String,System.String)">
+            <summary>
+            根据表名获取表中指定站别所有测试电脑编号
+            </summary>
+            <param name="TableName">传入数据表表名</param>
+            <param name="Station">传入站别名称</param>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataQueryController.GetDataTableWorkOrder(System.String,System.String)">
+            <summary>
+            根据表名获取表中指定站别所有工单信息
+            </summary>
+            <param name="TableName">传入数据表表名</param>
+            <param name="Station">传入站别名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataQueryController.GetTestData(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            获取指定条件测试数据
+            </summary>
+            <param name="TableName">传入表名</param>
+            <param name="Station">站别名称</param>
+            <param name="MachineName">电脑编号</param>
+            <param name="Result">测试结果</param>
+            <param name="DuplicateRemoval">是否去重(默认传False)</param>
+            <param name="Workorders">工单号</param>
+            <param name="SN">SN 号</param>
+            <param name="IncludeValue">测试数据包含内容</param>
+            <param name="StartTime">查询开始时间</param>
+            <param name="EndTime">查询结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataQueryController.CustomQuery(System.String)">
+            <summary>
+            自定义查询测试数据
+            </summary>
+            <param name="Sql">传入自定义查询语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataQueryController.SaveTestData(Data_Query_API.Model.SaveTestDataValue)">
+            <summary>
+            保存页面测试数据
+            </summary>
+            <param name="saveTestData">传入对应数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataQueryController.SaveFuzzyQueryTestData(Data_Query_API.Model.SaveTestDataValue)">
+            <summary>
+            保存页面模糊查询测试数据
+            </summary>
+            <param name="saveTestData">传入保存的测试数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataQueryController.GenerateTestDdataTrigger">
+            <summary>
+            创建所有log表数据分析触发器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataQueryController.DeleteTestDdataTrigger">
+            <summary>
+            删除所有log表数据分析触发器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.Controllers.TestDataUploadController">
+            <summary>
+            测试数据上传接口
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataUploadController.CreateTestLogTable(System.String)">
+            <summary>
+            判断log表是否存在，不存在则创建
+            </summary>
+            <param name="ModelValue">传入机型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataUploadController.UploadTestData(Data_Query_API.Model.TsetDataUploadValue)">
+            <summary>
+            上传测试数据
+            </summary>
+            <param name="dataValue">传入对应参数(ModelValue=机型名称,SN=SN,Result=测试结果,Station=站别名称,
+            workorders=工单,MachineName=电脑编号,TestTime=测试时长,WireNumber=线材使用次数,TestLog=测试数据)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataUploadController.Get_date_time">
+            <summary>
+            获取服务器当前时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataUploadController.CreateLogiTestLogTable(System.String)">
+            <summary>
+            判断Logi log表是否存在，不存在则创建
+            </summary>
+            <param name="ModelValue">传入机型名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataUploadController.LogiTestDataUpload(Data_Query_API.Model.LGDataUploadValue)">
+            <summary>
+            上传Logi测试数据
+            </summary>
+            <param name="logiDataUploadValue">传入对应参数(Status=测试结果,Comment=失败项,Test_Duration=测试时长,Failed_Tests,BU,Project,Station=站别
+            ,Stage=生产状态,MAC_Addr,IP_Addr,OemSource,DLLName=Dll名称,DLLTime=DLL生成时间,MesName=MES名称,workorders=工单,MachineName=电脑编号,
+            TestLog=测试数据)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataUploadController.CreateLogiAcousticData">
+            <summary>
+            创建Logi声学数据上传机型站别表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Controllers.TestDataUploadController.UploadLGAcousticData(System.String,System.String,System.String,System.String,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            上传LG测试声学数据
+            </summary>
+            <param name="Model">传入机型名称</param>
+            <param name="StationName">传入站别名称</param>
+            <param name="LGInfo">传入LG文件名称前缀信息（LogiProject_LogiStage）</param>
+            <param name="MachineName">传入电脑编号</param>
+            <param name="LGAcousticData">传入文件信息</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.BackgroundData.Background">
+            <summary>
+            后台获取数据类
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.BackgroundData.Background.GetUploadDataModelStation">
+            <summary>
+            获取后台所有有上传测试数据的机型和站别
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.BackgroundData.Background.GetUploadLGDataModelStation">
+            <summary>
+            获取后台所有有上传LG测试数据的机型和站别
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.BackgroundData.Background.GetUserModel(System.String)">
+            <summary>
+            根据用户ID获取用户所有机型
+            </summary>
+            <param name="UserID">传入用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.BackgroundData.Background.GetUploadAEDataUserModel(System.String)">
+            <summary>
+            根据用户ID获取用户所有有上传声学数据的机型
+            </summary>
+            <param name="UserID">传入用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.BackgroundData.Background.GetStation(System.String)">
+            <summary>
+            根据机型名称获取后台有上传测试数据的站别
+            </summary>
+            <param name="ModelName">传入机型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.BackgroundData.Background.GetLGStation(System.String)">
+            <summary>
+            根据机型名称获取后台有上传Logi测试数据的站别
+            </summary>
+            <param name="ModelName">传入机型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.BackgroundData.Background.GetStationTestItem(System.String,System.String)">
+            <summary>
+            根据机型和站别名称获取后台站别测试项目
+            </summary>
+            <param name="ModelName">传入机型名称</param>
+            <param name="StationName">传入站别名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.BackgroundData.Background.GetStationConfig(System.String,System.String)">
+            <summary>
+            根据机型和站别名称获取后台站别Config
+            </summary>
+            <param name="ModelName">传入机型名称</param>
+            <param name="StationName">传入站别名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.BackgroundData.Background.GetItemNumberInfo(System.String)">
+            <summary>
+            根据料号获取对应信息
+            </summary>
+            <param name="ItemNumber">传入料号</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.DataDailyData.DataDailyData">
+            <summary>
+            日报表数据类
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataDailyData.DataDailyData.GetDailyTableName">
+            <summary>
+            获取日报数据所有表名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataDailyData.DataDailyData.GetModelFromYear(System.String)">
+            <summary>
+            根据年获取当年所有有数据的机型
+            </summary>
+            <param name="Year">传入年份</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataDailyData.DataDailyData.GetDailyData(System.String,System.String,System.String,System.String)">
+            <summary>
+             查询指定机型指定时间段每日生产数据统计
+            </summary>
+            <param name="Year">传入年份</param>
+            <param name="Model">传入机型名称</param>
+            <param name="StartTime">传入查询开始时间</param>
+            <param name="EndTime">传入查询结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataDailyData.DataDailyData.GetDailyReportData(System.String,System.String,System.String,System.String)">
+            <summary>
+            查询指定机型指定时间段单日生产数据统计
+            </summary>
+            <param name="Year">传入年份</param>
+            <param name="Model">传入机型名称</param>
+            <param name="StartTime">传入查询开始时间</param>
+            <param name="EndTime">传入查询结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataDailyData.DataDailyData.SaveDailyReport(System.String,System.String,System.String)">
+            <summary>
+            保存日报页面良率数据
+            </summary>
+            <param name="ModelName">传入机型名称</param>
+            <param name="DailyReportData">传入页面日报数据</param>
+            <param name="SaveType">存储数据类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.DataTableCreationData.DataTableCreation">
+            <summary>
+            数据表创建类
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataTableCreationData.DataTableCreation.CreateTable(System.String)">
+            <summary>
+            创建日报数据表
+            </summary>
+            <param name="TableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataTableCreationData.DataTableCreation.CreateTable_backups(System.String)">
+            <summary>
+            创建备份日报数据表
+            </summary>
+            <param name="TableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataTableCreationData.DataTableCreation.CreateTestSuccessTable">
+            <summary>
+            创建测试成功数据表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataTableCreationData.DataTableCreation.CreateTestFailureTable">
+            <summary>
+            创建测试失败数据表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataTableCreationData.DataTableCreation.CreateTestStatistics">
+            <summary>
+            创建测试数据统计表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataTableCreationData.DataTableCreation.CreateComputerStatistics">
+            <summary>
+            创建电脑测试数据统计表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataTableCreationData.DataTableCreation.CreateTestLogTable(System.String)">
+            <summary>
+            创建TestLog表并创建触发器
+            </summary>
+            <param name="ModelValue">机型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataTableCreationData.DataTableCreation.CreateLogiTestLogTable(System.String)">
+            <summary>
+            创建Logi Test Log表
+            </summary>
+            <param name="ModelValue">机型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataTableCreationData.DataTableCreation.CreateLogiAcousticData">
+            <summary>
+            创建Logi声学数据上传机型站别表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataTableCreationData.DataTableCreation.GenerateTestDdataTrigger">
+            <summary>
+            创建所有log表数据分析触发器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataTableCreationData.DataTableCreation.DeleteTestDdataTrigger">
+            <summary>
+            删除所有log表数据分析触发器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.LGTestData.LGAETestData">
+            <summary>
+            LG 声学数据查询
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGAETestData.GetLGAEDataModel">
+            <summary>
+            获取上传LG声学数据的所有机型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGAETestData.GetLGAEDataStationFromModel(System.String)">
+            <summary>
+            根据机型获取上传LG声学数据的站别
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGAETestData.GetLGAEDataName(System.String,System.String,System.String,System.String)">
+            <summary>
+            根据站别和时间获取上传的LG声学数据文件名称
+            </summary>
+            <param name="Model">传入机型名称</param>
+            <param name="LGStation">传入LG站别名称</param>
+            <param name="StartTime">传入查询开始时间</param>
+            <param name="EndTime">传入查询结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGAETestData.DownloadSelectedAcousticData(System.String,System.String)">
+            <summary>
+            下载页面选择的声学数据
+            </summary>
+            <param name="FileName">传入存储后的文件夹名称</param>
+            <param name="FileInfo">以(JSON.stringify)入选择的文件信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGAETestData.DownloadAcousticData(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            下载页面指定条件下的所有声学数据
+            </summary>
+            <param name="Model">传入机型名称</param>
+            <param name="LGStation">传入LG站别名称</param>
+            <param name="StartTime">传入查询开始时间</param>
+            <param name="EndTime">传入查询结束时间</param>
+            <param name="FileName">传入存储后的文件夹名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGAETestData.DownloadAndUploadFiles(System.String)">
+            <summary>
+            根据数据生成上传源文件
+            </summary>
+            <param name="StationConfig">传入站别Config信息</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.LGTestData.LGDailyData">
+            <summary>
+            生成单日所有LG数据
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGDailyData.GenerateLGDailyData(System.String)">
+            <summary>
+            根据传入日期生成日LG测试数据和AE数据
+            </summary>
+            <param name="DateTime">传入生成的日期</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.LGTestData.LGTestData">
+            <summary>
+            LG 测试数据查询类
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGTestData.GetLGDataTableName">
+            <summary>
+            获取LG测试数据数据库所有表名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGTestData.GetDataTableLGStation(System.String)">
+            <summary>
+            根据表名获取LG测试数据表中所有站别
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGTestData.GetLGComputerName(System.String,System.String)">
+            <summary>
+            根据表名获取LG测试数据表中指定站别所有测试电脑名称
+            </summary>
+            <param name="TableName">传入表名</param>
+            <param name="Station">传入站别名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGTestData.GetLGTestData(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            获取指定条件LG测试数据
+            </summary>
+            <param name="TableName">传入表名</param>
+            <param name="Station">站别名称</param>
+            <param name="MachineName">电脑编号</param>
+            <param name="MesStatus">MES 转态</param>
+            <param name="StartTime">查询开始时间</param>
+            <param name="EndTime">查询结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGTestData.GetJsonFileData(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            根据指定条件获取生成 Json File 文件原始数据 
+            </summary>
+            <param name="TableName">传入表名</param>
+            <param name="Station">站别名称</param>
+            <param name="MachineName">电脑编号</param>
+            <param name="MesStatus">MES 转态</param>
+            <param name="StartTime">查询开始时间</param>
+            <param name="EndTime">查询结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGTestData.SaveLGTestData(Data_Query_API.Model.SaveLGDataValue)">
+            <summary>
+            保存页面LG数据
+            </summary>
+            <param name="SaveLGTestData">传入页面LG数据</param>
+            <returns></returns>
+        </member>
+        <member name="F:Data_Query_API.DataProcessing.LGTestData.LGTestData.LG_Excel_Fixed_Data">
+            <summary>
+            存储固定栏位数据
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGTestData.LGDataTitle(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}},System.Boolean,System.String@)">
+            <summary>
+            生成标题和格式数据
+            </summary>
+            <param name="Specify_computer_test_data">传入数据</param>
+            <param name="flag">页面或者自动生成flag</param>
+            <param name="CSVName">CSV名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGTestData.LGDataInfo(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}},System.Boolean,System.String,System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}}@)">
+            <summary>
+            生成测试数据
+            </summary>
+            <param name="Specify_computer_test_data">传入数据</param>
+            <param name="flag">页面或者自动生成flag</param>
+            <param name="FileName">文件名称</param>
+            <param name="DataValue">返回Excel数据</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.LGTestData.LGTestDataUpload">
+            <summary>
+            LG 测试数据上传类
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGTestDataUpload.LogiTestDataUpload(Data_Query_API.Model.LGDataUploadValue)">
+            <summary>
+            上传LG测试数据
+            </summary>
+            <param name="logi_data_value">传入测试数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.LGTestData.LGTestDataUpload.UploadLGAcousticData(System.String,System.String,System.String,System.String,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            上传 LG 声学测试数据
+            </summary>
+            <param name="Model">传入机型名称</param>
+            <param name="StationName">传入站别名称</param>
+            <param name="LGInfo">传入LG文件名称前缀信息（LogiProject_LogiStage）</param>
+            <param name="MachineName">传入电脑编号</param>
+            <param name="LGAcousticData">传入文件信息</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.RealTimeDataStatistics.RealTimeDataGeneration">
+            <summary>
+            实时数据生成
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.RealTimeDataStatistics.RealTimeDataGeneration.Execute(Quartz.IJobExecutionContext)">
+            <summary>
+            实现定时接口内容
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.RealTimeDataStatistics.RealTimeDataGeneration.Get_Query_statistics">
+            <summary>
+            对外统计数据接口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.RealTimeDataStatistics.RealTimeDataGeneration.Query_statistics">
+            <summary>
+            生成数据接口
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.RealTimeDataStatistics.RealTimeDataGeneration.SetComputerFail(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+            <summary>
+            统计电脑最近30次连续失败次数
+            </summary>
+            <param name="Computer">传入电脑数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.RealTimeDataStatistics.RealTimeDataGeneration.Get_Echarts(Data_Query_API.Model.ApiResponse)">
+            <summary>
+            图表数据处理方法
+            </summary>
+            <param name="Data">传入测试数据</param>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.RealTimeDataStatistics.RealTimeDataGeneration.Get_Echarts">
+            <summary>
+            对外获取图表数据接口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.RealTimeDataStatistics.ScheduledTasks">
+            <summary>
+            定时器任务建立
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.RealTimeDataStatistics.ScheduledTasks.RealTimeDataReport">
+            <summary>
+            实时数据定时器
+            </summary>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.RealTimeData.RealTimeDataProcessing">
+            <summary>
+            实时数据处理类
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.RealTimeData.RealTimeDataProcessing.ClearStatistics">
+            <summary>
+            清空所有实时统计信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.SNDataQuery.SNDataQuery">
+            <summary>
+            SN查询所有
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.SNDataQuery.SNDataQuery.GetTestDataFromSN(System.String,System.String,System.String)">
+            <summary>
+            获取指定SN测试数据
+            </summary>
+            <param name="TableName">传入表名</param>
+            <param name="YearFalgValue">是否查整年</param>
+            <param name="SN">SN 号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.SNDataQuery.SNDataQuery.SaveFuzzyQueryTestData">
+            <summary>
+            保存页面SN查询测试数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.SNDataQuery.SNDataQuery.SaveSNTestData(System.String,System.String)">
+            <summary>
+            保存SN查询所有测试数据
+            </summary>
+            <param name="Model">传入机型名称</param>
+            <param name="SNTestData">传入保存的测试数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.SNDataQuery.SNDataQuery.GetTestItemDataFromSN(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            获取指定站别、SN和测试项的测试值
+            </summary>
+            <param name="ModelName">传入机型名称</param>
+            <param name="StationName">传入站别名称</param>
+            <param name="SN">传入产品SN</param>
+            <param name="TestItemName">传入测试项目名称</param>
+            <param name="QuarterValue">传入查询几个季度</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.DataQuery.TestData">
+            <summary>
+            测试数据查询类
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataQuery.TestData.GetDataTableName">
+            <summary>
+            获取测试数据数据库所有表名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataQuery.TestData.GetDataTableStation(System.String)">
+            <summary>
+            获取指定测试数据表中所有站别
+            </summary>
+            <param name="TableName">传入数据表表名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataQuery.TestData.GetComputerName(System.String,System.String)">
+            <summary>
+            获取指定测试数据表中指定站别所有测试电脑编号
+            </summary>
+            <param name="TableName">传入数据表表名</param>
+            <param name="Station">传入站别名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataQuery.TestData.GetDataTableWorkOrder(System.String,System.String)">
+            <summary>
+            获取测试数据表中指定站别所有工单信息
+            </summary>
+            <param name="TableName">传入数据表表名</param>
+            <param name="Station">传入站别名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataQuery.TestData.GetTestData(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            获取指定条件测试数据
+            </summary>
+            <param name="TableName">传入表名</param>
+            <param name="Station">站别名称</param>
+            <param name="MachineName">电脑编号</param>
+            <param name="Result">测试结果</param>
+            <param name="DuplicateRemoval">是否去重</param>
+            <param name="Workorders">工单号</param>
+            <param name="SN">SN 号</param>
+            <param name="IncludeValue">测试数据包含内容</param>
+            <param name="StartTime">查询开始时间</param>
+            <param name="EndTime">查询结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataQuery.TestData.CustomQuery(System.String)">
+            <summary>
+            自定义查询测试数据
+            </summary>
+            <param name="Sql">传入自定义查询语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataQuery.TestData.SaveData(Data_Query_API.Model.SaveTestDataValue)">
+            <summary>
+            保存页面测试数据
+            </summary>
+            <param name="saveTestDataValue">传入对应测试数据 </param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataQuery.TestData.SaveFuzzyQueryTestData(Data_Query_API.Model.SaveTestDataValue)">
+            <summary>
+            保存页面测试数据
+            </summary>
+            <param name="saveTestDataValue">传入对应测试数据</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.DataQuery.TestDataUpload">
+            <summary>
+            测试数据上传类
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataQuery.TestDataUpload.UploadTestData(Data_Query_API.Model.TsetDataUploadValue)">
+            <summary>
+            上传测试数据
+            </summary>
+            <param name="dataValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.DataQuery.TestDataUpload.Get_date_time">
+            <summary>
+            获取服务器当前时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.TestData.TestDataDaily">
+            <summary>
+            生成测试日报
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.TestData.TestDataDaily.GenerateDailyReportData(System.String)">
+            <summary>
+            根据传入日期生成日报表文件
+            </summary>
+            <param name="DateTimeValue">传入生成报表的日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.TestData.TestDataDaily.Node_data_statistics(System.String,System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}},System.String@)">
+            <summary>
+            返回节点测试数据
+            </summary>
+            <param name="DataTime">传入时间</param>
+            <param name="TestData">传入测试数据</param>
+            <param name="values">返回字符串节点数据统计</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.TestData.TestDataDaily.ReadConfig(System.String)">
+            <summary>
+            读取内容并进行处理
+            </summary>
+            <param name="data">读取的节点名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.DataProcessing.User.UserData">
+            <summary>
+            用户数据处理
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.User.UserData.Login(System.String,System.String)">
+            <summary>
+            登录并返回Token
+            </summary>
+            <param name="UserName">账号</param>
+            <param name="Password">密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.DataProcessing.User.UserData.GenerateToken(System.String)">
+            <summary>
+            生成Token
+            </summary>
+            <param name="AccountNumber">传入账号</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.SaveData.SaveCsv">
+            <summary>
+            保存为 CSV 数据处理区
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveCsv.WriteCsv(System.String,System.String,System.String)">
+            <summary>
+            保存当日LogiData数据
+            </summary>
+            <param name="path">传入存储路径</param>
+            <param name="Name">文件名称</param>
+            <param name="result">写入内容 ----单元格内容，单元格内容-----</param>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveCsv.WritePageCsv(System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            保存页面Logi测试数据
+            </summary>
+            <param name="path">传入存储路径</param>
+            <param name="FileName">文件夹名称</param>
+            <param name="FileTime">文件夹名称加入时间</param>
+            <param name="CSVName">CSV文件名称</param>
+            <param name="result">写入内容 ----单元格内容，单元格内容-----</param>
+            <param name="flag">传入是否为第一次</param>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveCsv.CopyFolder(System.String,System.String)">
+            <summary>
+            复制文件夹及文件
+            </summary>
+            <param name="sourceFolder">原文件路径</param>
+            <param name="destFolder">目标文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.SaveData.SaveExcel">
+            <summary>
+            保存为 Excel 数据处理区域
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.TotalDataAalysis(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}},System.String,System.String)">
+            <summary>
+            数据统计
+            </summary>
+            <param name="TestStatistics">传入测试数据</param>
+            <param name="result">传入测试结果KEY名称</param>
+            <param name="SN">传入SN KEY名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.Test_computer_data_statistics(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}},System.String,System.String,System.String@)">
+            <summary>
+            测试电脑统计
+            </summary>
+            <param name="TestStatistics">传入测试数据</param>
+            <param name="result">传入测试结果KEY名称</param>
+            <param name="SN">传入SN KEY名称</param>
+            <param name="ComputerStatisticalResults">返回上传的电脑测试数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.FailedItemStatistics(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}},System.String,System.String)">
+            <summary>
+            测试项失败统计
+            </summary>
+            <param name="TestStatistics">传入测试数据</param>
+            <param name="result">传入测试结果KEY名称</param>
+            <param name="RresultValue">传入测试结果比对值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.HeaderData(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}})">
+            <summary>
+            解析测试数据标题/上限/下限
+            </summary>
+            <param name="TestDataTitle">传入页面的Title</param>
+            <param name="TestDataLimit">传入页面的上下限shuj</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.WriteStatistics(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.String}},OfficeOpenXml.ExcelWorksheet,System.Int32,System.String)">
+            <summary>
+            写入统计数据通用方法
+            </summary>
+            <param name="DataValue"></param>
+            <param name="worksheet"></param>
+            <param name="StartPosition"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.WriteData(System.String,System.Int32,OfficeOpenXml.ExcelWorksheet,System.Collections.Generic.List{System.Collections.Generic.List{System.String}},System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}},System.Drawing.Color)">
+            <summary>
+            写入测试数据通用方法
+            </summary>
+            <param name="Title">传入标题数据</param>
+            <param name="StartPosition">传入起始位置编号</param>
+            <param name="TestDataWork">操作对象</param>
+            <param name="HeaderData">头部固定数据</param>
+            <param name="Data">写入数据</param>
+            <param name="color">首行颜色</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.PassThroughRateColor(System.Int32,System.Double,OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32)">
+            <summary>
+            直通率标记方法
+            </summary>
+            <param name="Xaxis">传入单元格位置</param>
+            <param name="value">传入重测率值</param>
+            <param name="worksheet">传入操作对象</param>
+            <param name="StartPosition">单元格起始位置</param>
+            <param name="length">标记格数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.RetestRateColor(System.Int32,System.Double,OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32)">
+            <summary>
+            重测率标记方法
+            </summary>
+            <param name="Xaxis">传入单元格位置</param>
+            <param name="value">传入重测率值</param>
+            <param name="worksheet">传入操作对象</param>
+            <param name="StartPosition">单元格起始位置</param>
+            <param name="length">标记格数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.SetCell(OfficeOpenXml.ExcelWorksheet,System.Int32)">
+            <summary>
+            设置单元格格式
+            </summary>
+            <param name="worksheet">传入操作对象</param>
+            <param name="StartPosition">单元格位置</param>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.GetCol(System.Int32)">
+            <summary>
+            根据数值获取Excel列
+            </summary>
+            <param name="col"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.SaveDataAnalysis(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.String}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.String}},System.Collections.Generic.Dictionary{System.String,System.Int32},System.Boolean)">
+            <summary>
+            保存统计数据为Excel表
+            </summary>
+            <param name="Path">传入路径</param>
+            <param name="name">传入工作表名</param>
+            <param name="TestDataStatistics">传入统计数据</param>
+            <param name="NodeValues">传入节点测试数据统计</param>
+            <param name="ComputerValues">传入测试电脑测试情况统计</param>
+            <param name="FailureStatistics">传入测试项失败统计</param>
+            <param name="flag">传入是否为存储测试数据</param>
+            <returns></returns>    
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.DrawPieChart(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            生成饼图
+            </summary>
+            <param name="worksheet">传入当前操作excel的对象</param>
+            <param name="start">传入开始的位置</param>
+            <param name="end">传入结束的位置</param>
+            <param name="DataCells">传入数据列</param>
+            <param name="TitleCells">传入标题列</param>
+            <param name="top">传入距离顶部距离</param>
+            <param name="left">传入左边距离</param>
+            <param name="width">传入宽度</param>
+            <param name="height">传入高度</param>
+            <param name="title">传入标题</param>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.DrawColumnChart(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            生成柱形图
+            </summary>
+            <param name="worksheet">传入当前操作excel的对象</param>
+            <param name="start">传入开始的位置</param>
+            <param name="end">传入结束的位置</param>
+            <param name="DataCellsOne">传入第一个数据列</param>
+            <param name="DataCellsTwo">传入第二个数据列</param>
+            <param name="DataCellsThree">传入第二个数据列</param>
+            <param name="TitleCells">传入标题列</param>
+            <param name="top">传入距离顶部距离</param>
+            <param name="left">传入左边距离</param>
+            <param name="title">传入标题</param>
+            <param name="width">传入图标宽度</param>
+            <param name="height">传入图标高度</param>
+            <param name="YTitle">传入Y名称</param>
+            <param name="XTitle">传入X轴名称</param>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.DrawLineChart(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            生成柱形图
+            </summary>
+            <param name="worksheet">传入当前操作excel的对象</param>
+            <param name="start">传入开始的位置</param>
+            <param name="end">传入结束的位置</param>
+            <param name="DataCells">传入第一个数据列</param>
+            <param name="DataCells1">传入第二个数据列</param>
+            <param name="TitleCells">传入标题列</param>
+            <param name="top">传入距离顶部距离</param>
+            <param name="left">传入左边距离</param>
+            <param name="title">传入标题</param>
+            <param name="width">传入图表宽度</param>
+            <param name="height">传入图表高度</param>
+            <param name="YTitle">传入Y名称</param>
+            <param name="XTitle">传入X轴名称</param>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.SaveTestData(System.String,System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}},System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}})">
+            <summary>
+            存储Excel测试数据通用方法
+            </summary>
+            <param name="Path">传入文件路径</param>
+            <param name="TestData">测试数据</param>
+            <param name="TestDataTitle">标题数据</param>
+            <param name="TestDataLimit">Limlt数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.SaveData.SaveExcel.SaveLGData(System.String,System.String,System.String,System.Collections.Generic.List{System.String[]},System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+            <summary>
+            存储LG Excel测试数据通用方法
+            </summary>
+            <param name="path">传入文件路径</param>
+            <param name="FileName">文件名称</param>
+            <param name="FileTime">文件夹名称日期时间</param>
+            <param name="HeaderData">头部固定数据</param>
+            <param name="DataValues">写入数据</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.SaveData.Zip">
+            <summary>
+            压缩指定文件夹
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.SaveData.Zip.CompressDirectory(System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            压缩文件夹
+            </summary>
+            <param name="dirPath">要打包的文件夹</param>
+            <param name="GzipFileName">目标文件名</param>
+            <param name="CompressionLevel">压缩品质级别（0~9）</param>
+            <param name="deleteDir">是否删除原文件夹</param>
+        </member>
+        <member name="M:Data_Query_API.SaveData.Zip.GetAllFies(System.String)">
+            <summary>
+            获取所有文件
+            </summary>
+            <param name="dir"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.SaveData.Zip.GetAllDirsFiles(System.IO.DirectoryInfo[],System.Collections.Generic.Dictionary{System.String,System.DateTime})">
+            <summary>
+            获取一个文件夹下的所有文件夹里的文件
+            </summary>
+            <param name="dirs"></param>
+            <param name="filesList"></param>
+        </member>
+        <member name="M:Data_Query_API.SaveData.Zip.GetAllDirFiles(System.IO.DirectoryInfo,System.Collections.Generic.Dictionary{System.String,System.DateTime})">
+            <summary>
+            获取一个文件夹下的文件
+            </summary>
+            <param name="dir"></param>
+            <param name="filesList"></param>
+        </member>
+        <member name="T:Data_Query_API.GeneralMethod.Encryption">
+            <summary>
+            MD5 加密
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.GeneralMethod.Encryption.Md5(System.String)">
+            <summary>
+            MDF加密
+            </summary>
+            <param name="txt">传入加密字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.GeneralMethod.EncryptionCheck">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.GeneralMethod.EncryptionCheck.CheckInfo(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            校验是否为合法请求
+            </summary>
+            <param name="httpRequest">传入Http内容</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.GeneralMethod.GetConfiguration">
+            <summary>
+            读取配置文件内容
+            </summary>
+        </member>
+        <member name="F:Data_Query_API.GeneralMethod.GetConfiguration.testLogMysql">
+            <summary>
+            测试数据数据库
+            </summary>
+        </member>
+        <member name="F:Data_Query_API.GeneralMethod.GetConfiguration.te_testMysql">
+            <summary>
+            后台数据库
+            </summary>
+        </member>
+        <member name="F:Data_Query_API.GeneralMethod.GetConfiguration.testDailyMysql">
+            <summary>
+            生产实时数据数据库
+            </summary>
+        </member>
+        <member name="F:Data_Query_API.GeneralMethod.GetConfiguration.LGTestLogMysql">
+            <summary>
+            Logi测试数据数据库
+            </summary>
+        </member>
+        <member name="F:Data_Query_API.GeneralMethod.GetConfiguration.SecretKey">
+            <summary>
+            获取秘钥
+            </summary>
+        </member>
+        <member name="F:Data_Query_API.GeneralMethod.GetConfiguration.Issuer">
+            <summary>
+            获取发行者
+            </summary>
+        </member>
+        <member name="F:Data_Query_API.GeneralMethod.GetConfiguration.FileStorageLocation">
+            <summary>
+            文件存储位置
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.GeneralMethod.GetConfiguration.GetDefinition(System.String)">
+            <summary>
+            读取配置文件指定Key的内容
+            </summary>
+            <param name="Key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.GeneralMethod.Log">
+            <summary>
+            Log记录类
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.GeneralMethod.Log.LogWrite(System.String,System.String)">
+            <summary>
+            记录log
+            </summary>
+            <param name="str"></param>
+            <param name="Name"></param>
+        </member>
+        <member name="T:Data_Query_API.GeneralMethod.Time_conversion">
+            <summary>
+            时间戳转换类
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.GeneralMethod.Time_conversion.ToUnixTimestamp(System.DateTime)">
+            <summary>
+            返回10位时间戳 Timestamp
+            </summary>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.GeneralMethod.Time_conversion.ToLocalDateTime(System.Int32)">
+            <summary>
+            将10位时间戳Timestamp转换成日期
+            </summary>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.Model.ApiResponse">
+            <summary>
+            API 返回值格式化
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.ApiResponse.status">
+            <summary>
+            返回状态
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.ApiResponse.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.ApiResponse.message">
+            <summary>
+            返回消息
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.ApiResponse.data">
+            <summary>
+            返回数据
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.Model.ApiResponse.#ctor(System.Int32,System.Boolean,System.String,System.Object)">
+            <summary>
+            对外格式化方法
+            </summary>
+            <param name="Status"></param>
+            <param name="isSuccess"></param>
+            <param name="Message"></param>
+            <param name="Data"></param>
+        </member>
+        <member name="M:Data_Query_API.Model.ApiResponse.OK(System.Object)">
+            <summary>
+            请求成功返回
+            </summary>
+            <param name="Data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Model.ApiResponse.Error(System.Int32,System.String)">
+            <summary>
+            请求失败返回
+            </summary>
+            <param name="code">传入失败代码</param>
+            <param name="str">传入失败信息</param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.Model.LGDataUploadValue">
+            <summary>
+            Logi测试数据上传类
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.ModelValue">
+            <summary>
+            机型名称
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.StationValue">
+            <summary>
+            站别名称
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.Comment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.Test_Duration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.Failed_Tests">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.BU">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.Project">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.Station">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.Stage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.MAC_Addr">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.IP_Addr">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.OemSource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.DLLName">
+            <summary>
+            DLL名称
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.DLLTime">
+            <summary>
+            DLL生成时间
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.MesFlag">
+            <summary>
+            系统状态
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.MesName">
+            <summary>
+            系统名称
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.workorders">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.MachineName">
+            <summary>
+            电脑编号
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.LGDataUploadValue.TestLog">
+            <summary>
+            测试数据
+            </summary>
+        </member>
+        <member name="T:Data_Query_API.Model.Mysql">
+            <summary>
+            数据库操作类
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.Mysql.ConnectionString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Data_Query_API.Model.Mysql.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="connectionString"></param>
+        </member>
+        <member name="M:Data_Query_API.Model.Mysql.commonExecute(System.String)">
+            <summary>
+            增、删、改公共方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Model.Mysql.Query(System.String)">
+            <summary>
+            查询方法,直接返回结果
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Model.Mysql.DataQuery(System.String,System.Int32)">
+            <summary>
+            查询方法,返回API格式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Data_Query_API.Model.Mysql.DataTableToDictionary(System.Data.DataTable)">
+            <summary>
+            DataTable 转字典
+            </summary>
+            <param name="dataTable"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Data_Query_API.Model.SaveLGDataValue">
+            <summary>
+            保存 LG 测试数据内容
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.SaveLGDataValue.Model">
+            <summary>
+            机型名称
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.SaveLGDataValue.StartTime">
+            <summary>
+            查询开始时间
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.SaveLGDataValue.EndTime">
+            <summary>
+            查询结束时间
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.SaveLGDataValue.TestData">
+            <summary>
+            测试数据
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.SaveLGDataValue.TestDataStatistics">
+            <summary>
+            测试统计数据
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.SaveLGDataValue.TestFailStatistics">
+            <summary>
+            测试项失败数据
+            </summary>
+        </member>
+        <member name="T:Data_Query_API.Model.SaveTestDataValue">
+            <summary>
+            保存测试数据内容
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.SaveTestDataValue.Model">
+            <summary>
+            机型名称
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.SaveTestDataValue.TestData">
+            <summary>
+            测试数据
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.SaveTestDataValue.TestDataTitle">
+            <summary>
+            测试标题数据
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.SaveTestDataValue.TestDataLimit">
+            <summary>
+            测试Limit数据
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.SaveTestDataValue.TestDataStatistics">
+            <summary>
+            测试统计数据
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.SaveTestDataValue.TestFailStatistics">
+            <summary>
+            测试项失败数据
+            </summary>
+        </member>
+        <member name="T:Data_Query_API.Model.TsetDataUploadValue">
+            <summary>
+            数据上传参数类
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.TsetDataUploadValue.ModelValue">
+            <summary>
+            机型名称
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.TsetDataUploadValue.SN">
+            <summary>
+            SN
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.TsetDataUploadValue.Result">
+            <summary>
+            测试结果
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.TsetDataUploadValue.Station">
+            <summary>
+            测试站别
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.TsetDataUploadValue.workorders">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.TsetDataUploadValue.MachineName">
+            <summary>
+            电脑编号
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.TsetDataUploadValue.TestTime">
+            <summary>
+            测试时间
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.TsetDataUploadValue.WireNumber">
+            <summary>
+            线材使用次数
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.Model.TsetDataUploadValue.TestLog">
+            <summary>
+            测试数据
+            </summary>
+        </member>
+        <member name="T:Data_Query_API.WeatherForecast">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.WeatherForecast.Date">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.WeatherForecast.TemperatureC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.WeatherForecast.TemperatureF">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Data_Query_API.WeatherForecast.Summary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Test_data_API.Controllers.DataUpload">
+            <summary>
+            测试数据上传接口旧
+            </summary>
+        </member>
+        <member name="M:Test_data_API.Controllers.DataUpload.Create_test_log_table(Data_Query_API.Model.TsetDataUploadValue)">
+            <summary>
+            判断log表是否存在，不存在则创建
+            </summary>
+            <param name="dataValue">传入机型名(ModelValue=机型名称)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Test_data_API.Controllers.DataUpload.Test_data_upload(Data_Query_API.Model.TsetDataUploadValue)">
+            <summary>
+            上传测试数据
+            </summary>
+            <param name="dataValue">传入对应参数(ModelValue=机型名称,SN=SN,Result=测试结果,Station=站别名称,
+            workorders=工单,MachineName=电脑编号,TestTime=测试时长,WireNumber=线材使用次数,TestLog=测试数据)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Test_data_API.Controllers.DataUpload.Get_date_time">
+            <summary>
+            获取服务器当前时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Test_data_API.Controllers.LGTestDataUpload">
+            <summary>
+            Logi 测试数据上传接口旧
+            </summary>
+        </member>
+        <member name="M:Test_data_API.Controllers.LGTestDataUpload.CreateLogiTestLogTable(Data_Query_API.Model.LGDataUploadValue)">
+            <summary>
+            判断Logi log表是否存在，不存在则创建
+            </summary>
+            <param name="logiDataUploadValue">传入机型名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Test_data_API.Controllers.LGTestDataUpload.Logi_test_data_upload(Data_Query_API.Model.LGDataUploadValue)">
+            <summary>
+            上传Logi测试数据
+            </summary>
+            <param name="logiDataUploadValue">传入对应参数(Status=测试结果,Comment=失败项,Test_Duration=测试时长,Failed_Tests,BU,Project,Station=站别
+            ,Stage=生产状态,MAC_Addr,IP_Addr,OemSource,DLLName=Dll名称,DLLTime=DLL生成时间,MesName=MES名称,workorders=工单,MachineName=电脑编号,
+            TestLog=测试数据)</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

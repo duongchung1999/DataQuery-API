@@ -1,0 +1,2 @@
+2023-09-09 15:46:11.577 上传LG测试数据(LogiDataUpload)异常,异常信息The string 'string' was not recognized as a valid DateTime. There is an unknown word starting at index '0'.
+2023-10-30 15:34:30.809 上传 LG 声学测试数据(UploadLGAcousticData)异常,异常信息Index was outside the bounds of the array.

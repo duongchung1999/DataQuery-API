@@ -1,0 +1,4 @@
+2023-09-05 10:38:31.500 Object reference not set to an instance of an object.
+2023-09-05 11:00:26.736 Can't delete/overwrite merged cells. A range is partly merged with the another merged range. A1:AF1
+2023-09-05 11:00:46.109 Can't delete/overwrite merged cells. A range is partly merged with the another merged range. A1:AF1
+2023-09-05 11:01:19.722 Can't delete/overwrite merged cells. A range is partly merged with the another merged range. A1:AF1
