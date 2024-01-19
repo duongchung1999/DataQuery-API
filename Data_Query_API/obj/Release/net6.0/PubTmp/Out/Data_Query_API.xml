@@ -138,6 +138,13 @@
             <param name="SaveType">存储数据类型</param>
             <returns></returns>
         </member>
+        <member name="M:Data_Query_API.Controllers.DyTestPerformency.GetPerformency(System.String)">
+            <summary>
+            获取指定条件测试效率 Performency
+            </summary>
+            <param name="model">传入机型名称</param>
+            <returns></returns>
+        </member>
         <member name="T:Data_Query_API.Controllers.LGAETestDataController">
             <summary>
             Logi 声学数据查询和存储接口
@@ -971,6 +978,12 @@
             <param name="saveTestDataValue">传入对应测试数据</param>
             <returns></returns>
         </member>
+        <member name="M:Data_Query_API.DataProcessing.DataQuery.TestData.GetPerformencyData(System.String)">
+            <summary>
+            Get All Model's Performency
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Data_Query_API.DataProcessing.DataQuery.TestDataUpload">
             <summary>
             测试数据上传类
@@ -1316,6 +1329,11 @@
         <member name="T:Data_Query_API.GeneralMethod.GetConfiguration">
             <summary>
             读取配置文件内容
+            </summary>
+        </member>
+        <member name="F:Data_Query_API.GeneralMethod.GetConfiguration.DyTestPerformencySql">
+            <summary>
+            测试数据数据库
             </summary>
         </member>
         <member name="F:Data_Query_API.GeneralMethod.GetConfiguration.testLogMysql">
